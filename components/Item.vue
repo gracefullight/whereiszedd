@@ -1,18 +1,31 @@
 <template>
   <div class="row">
-    <div class="col-md-7">
-      <a href="#">
-        <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
-      </a>
-    </div>
     <div class="col-md-5">
-      <h3>Project Two</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.</p>
+      <no-ssr>
+        <l-map :zoom=14 :center="[evt.venue.latitude, evt.venue.longitude]">
+          <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
+          <l-marker :lat-lng="[evt.venue.latitude, evt.venue.longitude]"></l-marker>
+        </l-map>
+      </no-ssr>
+    </div>
+    <div class="col-md-7" v-if="evt">
+      <h3>{{ evt.venue.name }}</h3>
+      <p>{{ parsedDate }} {{ evt.venue.city }}, {{ evt.venue.country }}</p>
       <a class="btn btn-primary" href="#">View Project</a>
     </div>
   </div>
 </template>
 <script>
-export default {}
+import moment from 'moment'
+
+export default {
+    props: ['evt'],
+
+    computed: {
+      parsedDate: function() {
+        return moment(this.evt.datetime).format("YYYY-MM-DD HH:mm")
+      }
+    }
+}
 </script>
 

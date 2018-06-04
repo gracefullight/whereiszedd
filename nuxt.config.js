@@ -1,4 +1,4 @@
-const pkg = require('./package')
+const pkg = require("./package")
 
 module.exports = {
   mode: "universal",
@@ -42,6 +42,16 @@ module.exports = {
 
     "@nuxtjs/toast",
 
+    [
+      "nuxt-leaflet",
+      {
+        control: {
+          attribution: false
+        }
+      }
+    ],
+    ["@nuxtjs/moment", ["ko"]],
+
     "bootstrap-vue/nuxt",
 
     [
@@ -71,6 +81,10 @@ module.exports = {
         }
       }
     },
+
+    toast: {
+      duration: 2000
+    },
     /*
     ** You can extend webpack config here
     */
@@ -82,8 +96,8 @@ module.exports = {
           test: /\.(js|vue)$/,
           loader: "eslint-loader",
           exclude: /(node_modules)/
-        });
+        })
       }
     }
   }
-};
+}

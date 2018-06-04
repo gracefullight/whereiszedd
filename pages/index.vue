@@ -1,55 +1,65 @@
 <template>
   <!-- Page Content -->
-    <div class="container">
-
-      <!-- Page Heading -->
-      <!-- <h1 class="my-4">Page Heading
-        <small>Secondary Text</small>
-      </h1> -->
-      <br />
-
-      <Item />
-
-      <hr>
-
-      <!-- Pagination -->
-      <ul class="pagination justify-content-center">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-      </ul>
-
-    </div>
+    <main>
+      <Jumbo :startDate="startDate" :endDate="endDate" />
+      <div class="bg-light py-5">
+        <div class="container">
+          <Item v-for="evt in events" :key="evt.id" :evt="evt"/>
+          <hr />
+          <Pagination />
+        </div>
+      </div>
+    </main>
     <!-- /.container -->
 </template>
 
 <script>
 import Item from "~/components/Item.vue"
+import Jumbo from "~/components/Jumbo.vue"
+import Pagination from "~/components/Pagination.vue"
+import moment from "moment"
+
 export default {
   components: {
-    Item
+    Jumbo,
+    Item,
+    Pagination
+  },
+
+  data () {
+    return {
+      startDate: '',
+      endDate: ''
+    }
+  },
+
+  async asyncData ({ app, route, data }) {
+    const today = moment().format('YYYY-MM-DD')
+    let startDate = route.query.startDate || today
+    let endDate = route.query.endDate || moment(today).add(3, 'month').format('YYYY-MM-DD')
+
+    const oneYearLater = moment(today).add(1, 'year').format('YYYY-MM-DD')
+
+    if (moment(startDate).isBefore(today)) {
+      startDate = today
+    }
+
+    if (moment(endDate).isAfter(oneYearLater)) {
+      endDate = oneYearLater
+    }
+
+    try {
+      const response = await app.$axios.$get(`https://rest.bandsintown.com/artists/zedd/events?app_id=whereiszedd&date=${startDate},${endDate}`)
+      console.log(response)
+      return {
+        events: response,
+        startDate,
+        endDate
+      }
+    } catch (e) {
+      app.$toast.error("데이터를 가져오는 도중 오류가 발생했습니다")
+      app.$toast.error("나중에 다시 시도해주세요")
+    }
   }
 }
 </script>
-
-<style>
-
-</style>
