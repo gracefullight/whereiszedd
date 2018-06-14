@@ -3,6 +3,7 @@
     <div class="col-md-4 map">
       <no-ssr>
         <l-map
+          v-if="evt.venue.latitude && evt.venue.longitude"
           ref="map"
           :zoom=14
           :center="[evt.venue.latitude, evt.venue.longitude]"
