@@ -67,7 +67,9 @@ module.exports = {
       {
         id: "UA-89261637-5"
       }
-    ]
+    ],
+
+    "@nuxtjs/sitemap"
   ],
   /*
   ** Axios module configuration
@@ -78,6 +80,21 @@ module.exports = {
 
   toast: {
     duration: 2000
+  },
+
+  sitemap: {
+    path: "/sitemap.xml",
+    hostname: "https://gracefullight.github.io/whereiszedd/",
+    cacheTime: 1000 * 60 * 15,
+    gzip: true,
+    generate: true,
+    routes: [
+      {
+        url: "/",
+        changefreq: "weekly",
+        priority: 1
+      }
+    ]
   },
 
   /*
