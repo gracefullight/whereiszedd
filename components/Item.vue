@@ -31,7 +31,8 @@ export default {
     return {
       mapOptions: {
         attributionControl: false,
-        scrollWheelZoom: false
+        scrollWheelZoom: false,
+        dragging: false
       }
     }
   },

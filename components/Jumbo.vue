@@ -2,7 +2,7 @@
   <section class="jumbotron text-center">
     <div class="container">
       <h1 class="jumbotron-heading font-weight-bold text-light">
-        Where is ZEDD❔
+        Where is ZEDD?
       </h1>
       <p class="lead text-light">Check ZEDD's schedule</p>
       <form>
