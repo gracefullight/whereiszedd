@@ -30,7 +30,7 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <button type="submit" class="btn btn-outline-dark btn-block">검색</button>
+            <button type="submit" class="btn btn-outline-dark btn-block" @click="wait">검색</button>
           </div>
         </div>
       </form>
@@ -39,7 +39,13 @@
 </template>
 <script>
 export default {
-  props: ['startDate', 'endDate']
+  props: ['startDate', 'endDate'],
+
+  methods: {
+    wait () {
+      this.$toast.show('준비 중입니다')
+    }
+  }
 }
 </script>
 <style>

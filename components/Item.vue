@@ -29,7 +29,6 @@ export default {
   data () {
     return {
       mapOptions: {
-        zoomControl: false,
         attributionControl: false,
         scrollWheelZoom: false
       }

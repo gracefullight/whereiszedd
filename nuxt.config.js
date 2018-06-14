@@ -1,4 +1,5 @@
 const pkg = require("./package")
+const title = "Where is ZEDD"
 
 module.exports = {
   mode: "universal",
@@ -7,19 +8,21 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
-    meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: pkg.description }
-    ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+
+  },
+
+  manifest: {
+    name: title,
+    author: pkg.author,
+    description: pkg.description,
+    theme_color: "#dee2e6",
+    lang: "ko"
   },
 
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: "#FFFFFF" },
+  loading: { color: "#dee2e6" },
 
   /*
   ** Global CSS
@@ -53,6 +56,13 @@ module.exports = {
       {
         lang: "ko"
       }
+    ],
+
+    [
+      "@nuxtjs/google-analytics",
+      {
+        id: "UA-89261637-5"
+      }
     ]
   ],
   /*
@@ -60,6 +70,10 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  toast: {
+    duration: 2000
   },
 
   /*
@@ -76,9 +90,6 @@ module.exports = {
       }
     },
 
-    toast: {
-      duration: 2000
-    },
     /*
     ** You can extend webpack config here
     */
