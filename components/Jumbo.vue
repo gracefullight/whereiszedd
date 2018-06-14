@@ -2,13 +2,13 @@
   <section class="jumbotron text-center">
     <div class="container">
       <h1 class="jumbotron-heading font-weight-bold text-light">
-        제드 어디있니?
+        Where is ZEDD❔
       </h1>
-      <p class="lead text-light">지금 바로 검색하세요</p>
+      <p class="lead text-light">Check ZEDD's schedule</p>
       <form>
         <div class="form-row">
           <div class="form-group col-md-6 text-left">
-            <label for="startDate" class="text-light">시작일</label>
+            <label for="startDate" class="text-light">StartDate</label>
             <input
               type="date"
               class="form-control"
@@ -18,7 +18,7 @@
             />
           </div>
           <div class="form-group col-md-6 text-left">
-            <label for="endDate" class="text-light">종료일</label>
+            <label for="endDate" class="text-light">EndDate</label>
             <input
               type="date"
               class="form-control"
@@ -30,7 +30,7 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <button type="button" class="btn btn-outline-dark btn-block" @click="wait">검색</button>
+            <button type="button" class="btn btn-outline-dark btn-block" @click="wait">Search</button>
           </div>
         </div>
       </form>
@@ -43,7 +43,7 @@ export default {
 
   methods: {
     wait () {
-      this.$toast.show('준비 중입니다')
+      this.$toast.show('Coming soon ⛏️')
     }
   }
 }

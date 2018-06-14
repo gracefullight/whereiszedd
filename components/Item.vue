@@ -16,7 +16,7 @@
     <div class="col-md-8" v-if="evt">
       <h3>{{ evt.venue.name }}</h3>
       <p>{{ parsedDate }} {{ evt.venue.city }}, {{ evt.venue.country }}</p>
-      <a class="btn btn-outline-secondary" :href="evt.url" target="_blank">상세보기</a>
+      <a class="btn btn-outline-secondary" :href="evt.url" target="_blank">more...</a>
     </div>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <footer class="py-4 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Made with 🔥 by <a href="https://github.com/gracefullight" target="_new" class="text-muted">GracefulLight</a></p>
+      <p class="m-0 text-center text-white">Made with 🔥 by <a href="https://gracefullight.github.io" target="_new" class="text-muted">GracefulLight</a></p>
     </div>
   </footer>
 </template>
