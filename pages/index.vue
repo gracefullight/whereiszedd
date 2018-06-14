@@ -1,8 +1,9 @@
 <template>
   <main>
     <Jumbo :startDate="startDate" :endDate="endDate" />
-    <div class="bg-light py-5">
+    <div class="bg-light py-4">
       <div class="container">
+        <adsbygoogle class="mb-3"/>
         <Item v-for="evt in events" :key="evt.id" :evt="evt"/>
         <hr />
         <!-- <Pagination /> -->
