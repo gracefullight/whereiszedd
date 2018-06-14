@@ -11,6 +11,10 @@ module.exports = {
 
   },
 
+  router: {
+    base: '/whereiszedd/'
+  },
+
   manifest: {
     name: title,
     author: pkg.author,
