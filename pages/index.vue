@@ -54,25 +54,6 @@ export default {
     }
   },
 
-  async asyncData ({ app, route, isServer }) {
-    if (isServer) {
-      let startDate = isBefore(route.query.startDate, TODAY)
-      let endDate = isAfter(route.query.endDate, THREE_MONTH_LATER)
-
-      const response = await app.$axios.$get(ENDPOINT, {
-        params: {
-          date: `${startDate},${endDate}`
-        }
-      })
-
-      return {
-        events: response,
-        startDate,
-        endDate
-      }
-    }
-  },
-
   methods: {
     async getEvents () {
       let startDate = isBefore(this.$route.query.startDate, TODAY)

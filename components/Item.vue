@@ -8,7 +8,7 @@
           :center="[evt.venue.latitude, evt.venue.longitude]"
           :options="mapOptions"
           >
-          <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
+          <l-tile-layer url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
           <l-marker :lat-lng="[evt.venue.latitude, evt.venue.longitude]"></l-marker>
         </l-map>
       </no-ssr>
