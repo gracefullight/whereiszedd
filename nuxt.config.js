@@ -7,12 +7,10 @@ module.exports = {
   /*
   ** Headers of the page
   */
-  head: {
-
-  },
+  head: {},
 
   router: {
-    base: '/whereiszedd/'
+    base: "/whereiszedd/"
   },
 
   manifest: {
@@ -69,7 +67,15 @@ module.exports = {
       }
     ],
 
-    "@nuxtjs/sitemap"
+    "@nuxtjs/sitemap",
+
+    [
+      "@nuxtjs/google-adsense",
+      {
+        id: "ca-pub-3004788392777865",
+        pageLevelAds: true
+      }
+    ]
   ],
   /*
   ** Axios module configuration
