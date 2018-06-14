@@ -1,12 +1,14 @@
 <template>
   <section class="jumbotron text-center">
     <div class="container">
-      <h1 class="jumbotron-heading font-weight-bold">제드 어디있니?</h1>
-      <p class="lead">지금 바로 검색하세요</p>
+      <h1 class="jumbotron-heading font-weight-bold text-light">
+        제드 어디있니?
+      </h1>
+      <p class="lead text-light">지금 바로 검색하세요</p>
       <form>
         <div class="form-row">
           <div class="form-group col-md-6 text-left">
-            <label for="inputEmail4">시작일</label>
+            <label for="startDate" class="text-light">시작일</label>
             <input
               type="date"
               class="form-control"
@@ -16,7 +18,7 @@
             />
           </div>
           <div class="form-group col-md-6 text-left">
-            <label for="inputPassword4">종료일</label>
+            <label for="endDate" class="text-light">종료일</label>
             <input
               type="date"
               class="form-control"
@@ -28,7 +30,7 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <button type="submit" class="btn btn-outline-light btn-block">검색</button>
+            <button type="submit" class="btn btn-outline-dark btn-block">검색</button>
           </div>
         </div>
       </form>
@@ -50,9 +52,8 @@ export default {
   padding-bottom: var(--jumbotron-padding-y);
   margin-bottom: 0;
   background-image: url("~/assets/zedd_bg.jpg");
-  background-position: bottom center;
-  background-size: cover;
-  color: white;
+  background-position: center calc(50% - 250px);
+  background-repeat: no-repeat;
 }
 
 @media (min-width: 768px) {

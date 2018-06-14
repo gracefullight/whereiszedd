@@ -1,16 +1,14 @@
 <template>
-  <!-- Page Content -->
-    <main>
-      <Jumbo :startDate="startDate" :endDate="endDate" />
-      <div class="bg-light py-5">
-        <div class="container">
-          <Item v-for="evt in events" :key="evt.id" :evt="evt"/>
-          <hr />
-          <Pagination />
-        </div>
+  <main>
+    <Jumbo :startDate="startDate" :endDate="endDate" />
+    <div class="bg-light py-5">
+      <div class="container">
+        <Item v-for="evt in events" :key="evt.id" :evt="evt"/>
+        <hr />
+        <!-- <Pagination /> -->
       </div>
-    </main>
-    <!-- /.container -->
+    </div>
+  </main>
 </template>
 
 <script>

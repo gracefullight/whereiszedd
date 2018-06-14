@@ -42,14 +42,8 @@ module.exports = {
 
     "@nuxtjs/toast",
 
-    [
-      "nuxt-leaflet",
-      {
-        control: {
-          attribution: false
-        }
-      }
-    ],
+    "nuxt-leaflet",
+
     ["@nuxtjs/moment", ["ko"]],
 
     "bootstrap-vue/nuxt",
